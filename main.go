@@ -41,19 +41,11 @@ func serveWs(pool *websocket.Pool, w http.ResponseWriter, r *http.Request) {
 func setupRoutes() {
 	pool := websocket.NewPool()
 	go pool.Start()
-<<<<<<< HEAD
 
 	// map `/ws` endpoint to the `serveWs` function
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		serveWs(pool, w, r)
 	})
-
-	// map `/ws` endpoint to the `serveWs` function
-	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
-		serveWs(pool, w, r)
-	})
-=======
->>>>>>> Updated the functionality of the frontend to display messages better.
 
 	// map `/ws` endpoint to the `serveWs` function
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
